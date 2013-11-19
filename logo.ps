@@ -1,0 +1,36 @@
+%!PS-Adobe-1.0
+%%BoundingBox: 0 0 589 584
+%%HiResBoundingBox: 0.295031 0.000000 588.011888 583.745045
+
+/initialize {
+    72 25.4 div dup scale
+} def
+
+save /cleanslate exch def
+
+/letters [
+    (A) (B) (C) (D) (E) (F) (G) (H) (I) (J) (K) (L) (M)
+    (N) (O) (P) (Q) (R) (S) (T) (U) (V) (W) (X) (Y) (Z)
+] def
+
+initialize
+
+/size 8 def
+
+/Helvetica findfont size scalefont setfont
+
+/width size def
+/n letters length def
+0 1 n 1 sub {
+    /y-index exch def
+    0 1 n 1 sub{
+	/x-index exch def
+	x-index width mul n 1 sub y-index sub width mul moveto
+	/letter letters x-index y-index add n mod get def
+	letter show
+    } for
+} for
+
+showpage
+
+cleanslate restore
